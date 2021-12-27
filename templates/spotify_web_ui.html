@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width:device-width initial-scale=1.0">
+        <link rel="stylesheet" href="../static/spotify_css_styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;500&display=swap">
+        <title>Spotify Web Application</title>
+    <head>
+
+        <body>
+            <nav class="navbar navbar-expand-sm bg-info">
+                <h3 class="txt text-white mx-auto"><strong>Spotify Web Application - Create Playlist and Display Genres</strong></h3>
+            </nav>
+
+            <div class="all-content">
+                <div class="create-playlist">
+                    <h3>Create Playlist</h3>
+                    <form action="{{url_for('create_playlist')}}" method="POST" enctype = "multipart/form-data">
+                        <div class="input-group">
+                            <label for="user_id">Enter Your User ID:</label>
+                            <input type="text" id="user_id" name="user_id"><br><br>
+                            <label for="playlist_name">Enter Your Playlist Name:</label>
+                            <input type="text" id="playlist_name" name="playlist_name"><br><br>
+                            <input type="Submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+                
+                <hr>
+
+                <div class="display-genres">
+                    <h4>List of Genres in the Spotify</h4>
+                    <ul>
+                        {% for genre in genres_list %}
+                        <li>
+                            {{genre}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </body>
+</html>
