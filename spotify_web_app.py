@@ -9,7 +9,9 @@ def requesting_access_token():
        
    # code to get the refresh token
    refresh_auth_url = "https://accounts.spotify.com/api/token"
-
+       
+   # Note: I have resetted the client_id and client_secret in the spotify dashboard for security reasons.
+   # You should have your own client_id and client_secret
    # client ids and secret from spotify dashboard
    client_id = '177fdaf7917e4342802f36bab4fadb3a'
    client_secret = '8dcc31415c884443ad5f5818a13bf7ac'
